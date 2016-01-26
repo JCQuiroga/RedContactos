@@ -9,7 +9,7 @@ namespace RedContactos.ViewModel
 {
     public class LoginViewModel : GeneralViewModel
     {
-
+        //asd
         private UsuarioModel _usuario;
           
         public UsuarioModel Usuario
