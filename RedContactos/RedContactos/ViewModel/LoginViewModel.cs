@@ -37,7 +37,7 @@ namespace RedContactos.ViewModel
                 {
                     await _navigator.PushAsync<ContactosViewModel>(viewModel =>
                     {
-                        Titulo = "Tus Contactos";   
+                        Titulo = "Tus Contactos";     
                     });
                 }
                 else
