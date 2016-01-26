@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedContactos.View.AltaView">
+  <StackLayout>
+    <Label Text="Login"></Label>
+    <Entry Text="{Binding Usuario.login}"></Entry>
+    <Label Text="Password"></Label>
+    <Entry Text="{Binding Usuario.password}"></Entry>
+    <Label Text="Nombre"></Label>
+    <Entry Text="{Binding Usuario.nombre}"></Entry>
+    <Label Text="Apellidos"></Label>
+    <Entry Text="{Binding Usuario.apellidos}"></Entry>
+    <Button Text="Nuevo usuario" Command="{Binding CmdAlta}"></Button>
+  </StackLayout>
+</ContentPage>
