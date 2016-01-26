@@ -42,6 +42,7 @@
     <Compile Include="Servicios\IServicioMovil.cs" />
     <Compile Include="Servicios\ServicioDatos.cs" />
     <Compile Include="Util\Cadenas.cs" />
+    <Compile Include="Util\Session.cs" />
     <Compile Include="ViewModel\AltaViewModel.cs" />
     <Compile Include="ViewModel\ContactosViewModel.cs" />
     <Compile Include="ViewModel\GeneralViewModel.cs" />

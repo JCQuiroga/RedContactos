@@ -3,15 +3,15 @@ using System.Windows.Input;
 using ContactosModel.Model;
 using MvvmLibrary.Factorias;
 using RedContactos.Servicios;
+using RedContactos.Util;
 using Xamarin.Forms;
 
 namespace RedContactos.ViewModel
 {
     public class LoginViewModel : GeneralViewModel
     {
-        //asd
         private UsuarioModel _usuario;
-          
+
         public UsuarioModel Usuario
         {
             get { return _usuario; }
@@ -20,11 +20,11 @@ namespace RedContactos.ViewModel
 
         public ICommand CmdLogin { get; set; }
         public ICommand CmdAlta { get; set; }
-        public LoginViewModel(INavigator navigator, IServicioMovil servicio) : base(navigator, servicio)
+        public LoginViewModel(INavigator navigator, IServicioMovil servicio, Session session) : base(navigator, servicio, session)
         {
             _usuario = new UsuarioModel(); //MUY IMPORTANTE. Hay que inicializarlo, porque no llama al constructor de UsuarioModel por defecto.
-            CmdLogin=new Command(RunLogin);
-            CmdAlta=new Command(RunAlta);
+            CmdLogin = new Command(RunLogin);
+            CmdAlta = new Command(RunAlta);
         }
 
         private async void RunLogin()
@@ -37,7 +37,7 @@ namespace RedContactos.ViewModel
                 {
                     await _navigator.PushAsync<ContactosViewModel>(viewModel =>
                     {
-                        Titulo = "Tus Contactos";     
+                        Titulo = "Tus Contactos";
                     });
                 }
                 else
