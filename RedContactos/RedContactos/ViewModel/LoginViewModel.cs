@@ -11,7 +11,7 @@ namespace RedContactos.ViewModel
     {
 
         private UsuarioModel _usuario;
-
+          
         public UsuarioModel Usuario
         {
             get { return _usuario; }
