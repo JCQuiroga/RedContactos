@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using ContactosModel.Model;
 using RedContactos.Util;
 using RestSharp.Portable;
@@ -15,13 +16,15 @@ namespace RedContactos.Servicios
             client = new RestClient(Cadenas.Url);
         }
 
+        #region Usuario
+
         public async Task<UsuarioModel> ValidarUsuario(UsuarioModel usuario)
         {
             var request = new RestRequest("Usuario");
             //Al request se le pueden añadir Headers, y al client se le pueden añadir credentials
             request.Method = Method.GET;
-            request.AddQueryParameter("login",usuario.login);
-            request.AddQueryParameter("password",usuario.password);
+            request.AddQueryParameter("login", usuario.login);
+            request.AddQueryParameter("password", usuario.password);
 
             var reponse = await client.Execute<UsuarioModel>(request);
             if (reponse.IsSuccess) return reponse.Data;
@@ -47,9 +50,90 @@ namespace RedContactos.Servicios
             };
             request.AddJsonBody(usuario);
             var reponse = await client.Execute<UsuarioModel>(request);
-            
+
             if (reponse.IsSuccess) return reponse.Data;
             return null;
         }
+
+        #endregion
+
+        #region Contactos
+
+        public async Task<List<ContactoModel>> GetContactos(bool actuales, int id)
+        {
+            var request = new RestRequest("Contacto");
+
+            request.Method = Method.GET;
+            request.AddQueryParameter("id", id);
+            request.AddQueryParameter("amigos", actuales);
+
+            var reponse = await client.Execute<List<ContactoModel>>(request);
+            if (reponse.IsSuccess) return reponse.Data;
+            return null;
+        }
+
+        public async Task<ContactoModel> AddContacto(ContactoModel contacto)
+        {
+            var request = new RestRequest("Contacto")
+            {
+                Method = Method.POST
+            };
+            request.AddJsonBody(contacto);
+            var reponse = await client.Execute<ContactoModel>(request);
+
+            if (reponse.IsSuccess) return reponse.Data;
+            return null;
+        }
+
+        public async Task DelContacto(ContactoModel contacto)
+        {
+            var request = new RestRequest("Contacto")
+            {
+                Method = Method.DELETE
+            };
+            request.AddJsonBody(contacto);
+            var reponse = await client.Execute(request);
+        }
+
+        #endregion
+
+        #region Mensaje
+
+        public async Task<List<MensajeModel>> GetMensaje(int id)
+        {
+            var request = new RestRequest("Mensaje");
+
+            request.Method = Method.GET;
+            request.AddQueryParameter("id", id);
+
+            var reponse = await client.Execute<List<MensajeModel>>(request);
+            if (reponse.IsSuccess) return reponse.Data;
+            return null;
+        }
+
+        public async Task<MensajeModel> AddMensaje(MensajeModel mensaje)
+        {
+            var request = new RestRequest("Mensaje")
+            {
+                Method = Method.POST
+            };
+            request.AddJsonBody(mensaje);
+            var reponse = await client.Execute<MensajeModel>(request);
+
+            if (reponse.IsSuccess) return reponse.Data;
+            return null;
+        }
+
+        public async Task UpdateMensaje(MensajeModel mensaje)
+        {
+            var request = new RestRequest("Mensaje")
+            {
+                Method = Method.PUT
+            };
+            request.AddJsonBody(mensaje);
+            var reponse = await client.Execute(request);
+        }
+
+        #endregion
     }
 }

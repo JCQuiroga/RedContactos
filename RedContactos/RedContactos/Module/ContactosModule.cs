@@ -1,9 +1,12 @@
 ﻿
 using System;
 using Autofac;
+using MvvmLibrary.Factorias;
 using RedContactos.Servicios;
 using RedContactos.View;
 using RedContactos.ViewModel;
+using RedContactos.ViewModel.Contactos;
+using RedContactos.ViewModel.Usuarios;
 using Xamarin.Forms;
 
 namespace RedContactos.Module
@@ -22,6 +25,9 @@ namespace RedContactos.Module
                 var navigation = page as IPageContainer<Page>;
                 return navigation != null ? navigation.CurrentPage : page;
             });
+            builder.RegisterType<DialogService>().As<IDialogService>().SingleInstance();
+            builder.RegisterType<PageProxy>().As<IPage>().SingleInstance();
+
             builder.RegisterType<ServicioDatos>().As<IServicioMovil>().SingleInstance();
             builder.RegisterType<LoginView>().SingleInstance();
             builder.RegisterType<LoginViewModel>().SingleInstance();

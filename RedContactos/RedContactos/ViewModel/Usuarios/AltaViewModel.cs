@@ -3,9 +3,10 @@ using ContactosModel.Model;
 using MvvmLibrary.Factorias;
 using RedContactos.Servicios;
 using RedContactos.Util;
+using RedContactos.ViewModel.Contactos;
 using Xamarin.Forms;
 
-namespace RedContactos.ViewModel
+namespace RedContactos.ViewModel.Usuarios
 {
     public class AltaViewModel : GeneralViewModel
     {
@@ -18,7 +19,7 @@ namespace RedContactos.ViewModel
 
         public ICommand CmdAlta { get; set; }
 
-        public AltaViewModel(INavigator navigator, IServicioMovil servicio, Session session) : base(navigator, servicio, session)
+        public AltaViewModel(INavigator navigator, IServicioMovil servicio, IPage page) : base(navigator, servicio, page)
         {
             _usuario = new UsuarioModel();
             CmdAlta = new Command(RunAlta);

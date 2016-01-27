@@ -2,7 +2,7 @@
 
 namespace MvvmLibrary.Factorias
 {
-    public interface IPage
+    public interface IPage:IDialogService
     {
         INavigation Navigation { get; }
     }

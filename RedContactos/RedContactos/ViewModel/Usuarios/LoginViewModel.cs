@@ -4,9 +4,10 @@ using ContactosModel.Model;
 using MvvmLibrary.Factorias;
 using RedContactos.Servicios;
 using RedContactos.Util;
+using RedContactos.ViewModel.Contactos;
 using Xamarin.Forms;
 
-namespace RedContactos.ViewModel
+namespace RedContactos.ViewModel.Usuarios
 {
     public class LoginViewModel : GeneralViewModel
     {
@@ -20,7 +21,7 @@ namespace RedContactos.ViewModel
 
         public ICommand CmdLogin { get; set; }
         public ICommand CmdAlta { get; set; }
-        public LoginViewModel(INavigator navigator, IServicioMovil servicio, Session session) : base(navigator, servicio, session)
+        public LoginViewModel(INavigator navigator, IServicioMovil servicio, IPage page) : base(navigator, servicio, page)
         {
             _usuario = new UsuarioModel(); //MUY IMPORTANTE. Hay que inicializarlo, porque no llama al constructor de UsuarioModel por defecto.
             CmdLogin = new Command(RunLogin);

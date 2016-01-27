@@ -9,13 +9,13 @@ namespace RedContactos.ViewModel
     {
         protected INavigator _navigator;
         protected IServicioMovil _servicio;
-        protected Session _session;
+        protected IPage _page;
 
-        public GeneralViewModel(INavigator navigator, IServicioMovil servicio, Session session)
+        public GeneralViewModel(INavigator navigator, IServicioMovil servicio, IPage page)
         {
             _navigator = navigator;
             _servicio = servicio;
-            _session = session;
+            _page = page;
         }
     }
 }
