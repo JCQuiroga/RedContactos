@@ -36,11 +36,20 @@ namespace RedContactos.ViewModel.Usuarios
                     var r = await _servicio.AddUsuario(Usuario);
                     if (r != null)
                     {
+                        Cadenas.Session["usuario"] = r;
                         await _navigator.PushAsync<ContactosViewModel>(viewModel =>
                         {
                             Titulo = "Tus contactos";
                         });
                     }
+                    else
+                    {
+                        await _page.MostrarAlerta("Error", "Error al crear usuario", "Aceptar");
+                    }
+                }
+                else
+                {
+                    await _page.MostrarAlerta("Error","Error. Usuario ya registrado","Aceptar");
                 }
             }
             finally

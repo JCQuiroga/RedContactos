@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using ContactosModel.Model;
 using MvvmLibrary.Factorias;
+using Newtonsoft.Json.Serialization;
 using RedContactos.Servicios;
 using RedContactos.Util;
 using RedContactos.ViewModel.Contactos;
@@ -36,14 +37,15 @@ namespace RedContactos.ViewModel.Usuarios
                 var us = await _servicio.ValidarUsuario(Usuario);
                 if (us != null)
                 {
+                    Cadenas.Session["usuario"] = us;
                     await _navigator.PushAsync<ContactosViewModel>(viewModel =>
                     {
-                        Titulo = "Tus Contactos";
+                        viewModel.Titulo = "Tus Contactos";
                     });
                 }
                 else
                 {
-                    await new Page().DisplayAlert("ERROR", "Usuario y/o contraseña incorrectos", "OK");
+                    await _page.MostrarAlerta("Error","Error en el login","Aceptar");
                 }
             }
             catch (Exception e)
