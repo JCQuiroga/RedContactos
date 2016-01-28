@@ -36,15 +36,17 @@ namespace RedContactos.ViewModel.Contactos
         }
 
         public ICommand CmdNuevo { get; set; }
+        //public ICommand CmdNuevoMensaje { get; set; }
 
         public ContactosViewModel(INavigator navigator, IServicioMovil servicio, IPage page) : base(navigator, servicio, page)
         {
             CmdNuevo = new Command(RunNuevoContacto);
+            //CmdNuevoMensaje = new Command(RunAddMensaje);
         }
 
         private async void RunNuevoContacto()
         {
-            await _navigator.PushAsync<AddContactoViewModel>(ViewModel =>
+           await _navigator.PushAsync<AddContactoViewModel>(ViewModel =>
             {
                 ViewModel.Amigos = Amigos;
                 ViewModel.NoAmigos = NoAmigos;

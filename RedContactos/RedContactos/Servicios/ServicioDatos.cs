@@ -61,7 +61,7 @@ namespace RedContactos.Servicios
 
         public async Task<List<ContactoModel>> GetContactos(bool actuales, int id)
         {
-            var request = new RestRequest("Contacto");
+            var request = new RestRequest("Contactos");
 
             request.Method = Method.GET;
             request.AddQueryParameter("id", id);
@@ -74,7 +74,7 @@ namespace RedContactos.Servicios
 
         public async Task<ContactoModel> AddContacto(ContactoModel contacto)
         {
-            var request = new RestRequest("Contacto")
+            var request = new RestRequest("Contactos")
             {
                 Method = Method.POST
             };
@@ -87,7 +87,7 @@ namespace RedContactos.Servicios
 
         public async Task DelContacto(ContactoModel contacto)
         {
-            var request = new RestRequest("Contacto")
+            var request = new RestRequest("Contactos")
             {
                 Method = Method.DELETE
             };

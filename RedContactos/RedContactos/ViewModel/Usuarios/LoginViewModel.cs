@@ -38,7 +38,7 @@ namespace RedContactos.ViewModel.Usuarios
                 if (us != null)
                 {
                     Cadenas.Session["usuario"] = us;
-                    await _navigator.PushAsync<ContactosViewModel>(viewModel =>
+                    await _navigator.PushAsync<PrincipalViewModel>(viewModel =>
                     {
                         viewModel.Titulo = "Tus Contactos";
                     });
