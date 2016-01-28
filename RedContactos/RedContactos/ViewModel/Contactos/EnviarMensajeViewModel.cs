@@ -43,11 +43,11 @@ namespace RedContactos.ViewModel.Contactos
                 var r = await _servicio.AddMensaje(Mensaje);
                 if (r != null)
                 {
-                    //TODO: Meter dialogo de confirmación de envio de mensaje.
+                    await _page.MostrarAlerta("Exito", "Mensaje enviado","Aceptar");
                 }
                 else
                 {
-                    //TODO: Meter aviso de fallo en el envio de mensaje.
+                    await _page.MostrarAlerta("Error", "No se pudo enviar", "Aceptar");
                 }
             }
             finally

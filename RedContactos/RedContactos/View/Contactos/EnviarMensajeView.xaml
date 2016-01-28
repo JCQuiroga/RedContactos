@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedContactos.View.Contactos.EnviarMensajeView">
+  <StackLayout>
+    <Label Text="Asunto"></Label>
+    <Entry Text="{Binding Mensaje.asunto}"></Entry>
+    <Label Text="Mensaje"></Label>
+    <Editor Text="{Binding Mensaje.contenido}"></Editor>
+    <Button Text="Enviar" Command="{Binding CmdEnviar}"></Button>
+  </StackLayout>
+</ContentPage>

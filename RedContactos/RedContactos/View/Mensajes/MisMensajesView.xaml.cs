@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace RedContactos.View
+namespace RedContactos.View.Mensajes
 {
-    public partial class ContactosView : ContentPage
+    public partial class MisMensajesView : ContentPage
     {
-        public ContactosView()
+        public MisMensajesView()
         {
             InitializeComponent();
         }

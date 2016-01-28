@@ -4,6 +4,7 @@ using Autofac;
 using MvvmLibrary.Factorias;
 using RedContactos.Servicios;
 using RedContactos.View;
+using RedContactos.View.Contactos;
 using RedContactos.ViewModel;
 using RedContactos.ViewModel.Contactos;
 using RedContactos.ViewModel.Usuarios;

@@ -39,7 +39,7 @@ namespace RedContactos.ViewModel.Usuarios
                         Cadenas.Session["usuario"] = r;
                         await _navigator.PushAsync<ContactosViewModel>(viewModel =>
                         {
-                            Titulo = "Tus contactos";
+                            viewModel.Titulo = "Tus contactos";
                         });
                     }
                     else

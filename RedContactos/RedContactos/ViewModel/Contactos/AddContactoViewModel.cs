@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using ContactosModel.Model;
 using MvvmLibrary.Factorias;
@@ -31,9 +33,28 @@ namespace RedContactos.ViewModel.Contactos
             CmdAdd = new Command(AddContacto);
         }
 
-        private async void AddContacto()
+        private async void AddContacto(object obj)
         {
-            //TODO
+            var id = int.Parse(obj.ToString());
+            var c = NoAmigos.FirstOrDefault(o => o.idDestino == id);
+            if (c != null)
+            {
+                var r = await _page.MostrarAlerta("Confirmación","Estas seguro de añadir a "+c.nombreCompleto,"Si","No");
+                if (r)
+                {
+                    var ok = await _servicio.AddContacto(c );
+                    if (ok != null)
+                    {
+                        await _page.MostrarAlerta("Éxito", "Contacto añadido", "Aceptar");
+                        Amigos.Add(c);
+                        NoAmigos.Remove(c);
+                    }
+                    else
+                    {
+                        await _page.MostrarAlerta("Error", "Contacto no añadido","Aceptar");
+                    }
+                }
+            }
         }
     }
 }

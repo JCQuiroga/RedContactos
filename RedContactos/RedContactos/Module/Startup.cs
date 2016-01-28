@@ -2,6 +2,7 @@
 using MvvmLibrary.Factorias;
 using MvvmLibrary.ModuloBase;
 using RedContactos.View;
+using RedContactos.View.Contactos;
 using RedContactos.ViewModel;
 using RedContactos.ViewModel.Contactos;
 using RedContactos.ViewModel.Usuarios;
