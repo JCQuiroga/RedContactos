@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using ContactosModel.Model;
 using MvvmLibrary.Factorias;
+using RedContactos.Models;
 using RedContactos.Servicios;
 using RedContactos.Util;
 using Xamarin.Forms;
@@ -17,8 +18,8 @@ namespace RedContactos.ViewModel.Contactos
             set { SetProperty(ref _amigos, value); }
         }
 
-        private ObservableCollection<ContactoModel> _noAmigos;
-        public ObservableCollection<ContactoModel> NoAmigos
+        private ObservableCollection<NoAmigosModel> _noAmigos;
+        public ObservableCollection<NoAmigosModel> NoAmigos
         {
             get { return _noAmigos; }
             set { SetProperty(ref _noAmigos, value); }
@@ -30,35 +31,36 @@ namespace RedContactos.ViewModel.Contactos
             get { return _contactoSeleccionado; }
             set
             {
-                if(value!=null)RunAddMensaje();
                 SetProperty(ref _contactoSeleccionado, value);
+                if (value!=null)RunAddMensaje();
             }
         }
 
         public ICommand CmdNuevo { get; set; }
-        //public ICommand CmdNuevoMensaje { get; set; }
-
+       
         public ContactosViewModel(INavigator navigator, IServicioMovil servicio, IPage page) : base(navigator, servicio, page)
         {
             CmdNuevo = new Command(RunNuevoContacto);
-            //CmdNuevoMensaje = new Command(RunAddMensaje);
+
         }
 
         private async void RunNuevoContacto()
         {
-           await _navigator.PushAsync<AddContactoViewModel>(ViewModel =>
-            {
-                ViewModel.Amigos = Amigos;
-                ViewModel.NoAmigos = NoAmigos;
-            });
+            await _navigator.PushAsync<AddContactoViewModel>(viewModel =>
+             {
+                 viewModel.Amigos = Amigos;
+                 viewModel.NoAmigos = NoAmigos;
+             });
         }
+
         private async void RunAddMensaje()
         {
-            await _navigator.PushAsync<EnviarMensajeViewModel>(ViewModel =>
+            await _navigator.PushAsync<EnviarMensajeViewModel>(viewModel =>
             {
-                ViewModel.Contacto = ContactoSeleccionado;
-                ViewModel.Mensaje = new MensajeModel();
+                viewModel.Contacto = ContactoSeleccionado;
+                viewModel.Mensaje = new MensajeModel();
             });
+            ContactoSeleccionado = null;
         }
 
     }

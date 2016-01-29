@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Models\NoAmigosModel.cs" />
     <Compile Include="Module\ContactosModule.cs" />
     <Compile Include="Module\Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,9 +130,7 @@
       <Name>MvvmLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="View\LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

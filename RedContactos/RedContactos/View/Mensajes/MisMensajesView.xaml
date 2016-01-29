@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedContactos.View.Mensajes.MisMensajesView">
-  <ListView ItemsSource="{Binding Mensajes}" SelectedItem="{Binding MensajeSeleccionado}">
+  <ListView ItemsSource="{Binding Mensajes}" SelectedItem="{Binding MensajeSeleccionado,Mode=TwoWay}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>

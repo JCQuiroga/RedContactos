@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RedContactos.View.Contactos.AddContactoView">
+             x:Class="RedContactos.View.Contactos.AddContactoView"
+             x:Name="Pagina">
   <ListView ItemsSource="{Binding NoAmigos}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
           <ViewCell.ContextActions>
-            <MenuItem Text="Añadir" Command="{Binding CmdAdd}" CommandParameter="{Binding idDestino}"></MenuItem>
+            <!--BindingContext="{Binding Source={x:Reference Pagina},Path=BindingContext}" Esto iria en el MenuItem-->
+            <MenuItem Text="Añadir"  Command="{Binding CmdAdd}"/>
           </ViewCell.ContextActions>
           <StackLayout>
-            <Label Text="{Binding nombreCompleto}"></Label>
+            <Label Text="{Binding ContactoModel.nombreCompleto}"></Label>
           </StackLayout>
         </ViewCell>
       </DataTemplate>

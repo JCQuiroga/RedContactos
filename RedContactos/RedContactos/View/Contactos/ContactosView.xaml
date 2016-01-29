@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedContactos.View.Contactos.ContactosView">
   <StackLayout>
-    <ListView ItemsSource="{Binding Amigos}" SelectedItem="{Binding ContactoSeleccionado}">
+    <ListView ItemsSource="{Binding Amigos}" SelectedItem="{Binding ContactoSeleccionado,Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <TextCell Text="{Binding nombreCompleto}"></TextCell>
