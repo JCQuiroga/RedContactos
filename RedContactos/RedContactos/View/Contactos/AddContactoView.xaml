@@ -12,7 +12,7 @@
             <MenuItem Text="Añadir"  Command="{Binding CmdAdd}"/>
           </ViewCell.ContextActions>
           <StackLayout>
-            <Label Text="{Binding ContactoModel.nombreCompleto}"></Label>
+            <Label Text="{Binding ContactoModel.nombreCompleto}"/>
           </StackLayout>
         </ViewCell>
       </DataTemplate>

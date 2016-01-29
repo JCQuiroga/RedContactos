@@ -7,11 +7,11 @@
       <DataTemplate>
         <ViewCell>
           <StackLayout>
-            <Label Text="{Binding asunto}"></Label>
+            <Label Text="{Binding asunto}"/>
             <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding idOrigen,StringFormat='Enviado por {0}' }"></Label>
-              <Label Text="{Binding fecha,StringFormat='{0:d}'}"></Label>
-              <Label Text="{Binding Estado}"></Label>
+              <Label Text="{Binding idOrigen,StringFormat='Enviado por {0}' }"/>
+              <Label Text="{Binding fecha,StringFormat='{0:d}'}"/>
+              <Label Text="{Binding Estado}"/>
             </StackLayout>
           </StackLayout>
         </ViewCell>

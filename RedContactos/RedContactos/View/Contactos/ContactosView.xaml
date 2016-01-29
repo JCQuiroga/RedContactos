@@ -6,10 +6,10 @@
     <ListView ItemsSource="{Binding Amigos}" SelectedItem="{Binding ContactoSeleccionado,Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding nombreCompleto}"></TextCell>
+          <TextCell Text="{Binding nombreCompleto}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Text="Nuevo" Command="{Binding CmdNuevo}"></Button>
+    <Button Text="Nuevo" Command="{Binding CmdNuevo}"/>
   </StackLayout>
 </ContentPage>

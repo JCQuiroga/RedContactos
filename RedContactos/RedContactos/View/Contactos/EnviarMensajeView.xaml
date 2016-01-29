@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedContactos.View.Contactos.EnviarMensajeView">
   <StackLayout>
-    <Label Text="Asunto"></Label>
-    <Entry Text="{Binding Mensaje.asunto}"></Entry>
-    <Label Text="Mensaje"></Label>
-    <Editor Text="{Binding Mensaje.contenido}"></Editor>
-    <Button Text="Enviar" Command="{Binding CmdEnviar}"></Button>
+    <Label Text="Asunto"/>
+    <Entry Text="{Binding Mensaje.asunto}"/>
+    <Label Text="Mensaje"/>
+    <Editor Text="{Binding Mensaje.contenido}"/>
+    <Button Text="Enviar" Command="{Binding CmdEnviar}"/>
   </StackLayout>
 </ContentPage>

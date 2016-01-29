@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedContactos.View.Mensajes.DetalleMensajeView">
  <StackLayout>
-   <Label Text="{Binding Mensaje.idOrigen}"></Label>
-   <Label Text="{Binding Mensaje.asunto}"></Label>
-   <Label Text="{Binding Mensaje.contenido}"></Label>
+   <Label Text="{Binding Mensaje.idOrigen}"/>
+   <Label Text="{Binding Mensaje.asunto}"/>
+   <Label Text="{Binding Mensaje.contenido}"/>
  </StackLayout>
 </ContentPage>

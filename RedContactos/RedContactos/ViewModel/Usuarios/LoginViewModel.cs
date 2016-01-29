@@ -43,14 +43,10 @@ namespace RedContactos.ViewModel.Usuarios
                         viewModel.Titulo = "Tus Contactos";
                     });
                 }
-                else
-                {
-                    await _page.MostrarAlerta("Error","Error en el login","Aceptar");
-                }
             }
             catch (Exception e)
             {
-                await new Page().DisplayAlert("Excepcion", e.Message, "OK");
+                await _page.MostrarAlerta("Error", "Error en el login", "Aceptar");
             }
             finally
             {

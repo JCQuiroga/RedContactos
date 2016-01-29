@@ -40,6 +40,7 @@
     <Compile Include="Module\ContactosModule.cs" />
     <Compile Include="Module\Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\IServicioFicheros.cs" />
     <Compile Include="Servicios\IServicioMovil.cs" />
     <Compile Include="Servicios\ServicioDatos.cs" />
     <Compile Include="Util\Cadenas.cs" />

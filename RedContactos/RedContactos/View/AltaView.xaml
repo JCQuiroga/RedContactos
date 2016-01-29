@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedContactos.View.AltaView">
   <StackLayout>
-    <Label Text="Login"></Label>
-    <Entry Text="{Binding Usuario.login}"></Entry>
-    <Label Text="Password"></Label>
-    <Entry Text="{Binding Usuario.password}"></Entry>
-    <Label Text="Nombre"></Label>
-    <Entry Text="{Binding Usuario.nombre}"></Entry>
-    <Label Text="Apellidos"></Label>
-    <Entry Text="{Binding Usuario.apellidos}"></Entry>
-    <Button Text="Nuevo usuario" Command="{Binding CmdAlta}"></Button>
+    <Label Text="Login"/>
+    <Entry Text="{Binding Usuario.login}"/>
+    <Label Text="Password"/>
+    <Entry Text="{Binding Usuario.password}"/>
+    <Label Text="Nombre"/>
+    <Entry Text="{Binding Usuario.nombre}"/>
+    <Label Text="Apellidos"/>
+    <Entry Text="{Binding Usuario.apellidos}"/>
+    <Button Text="Nuevo usuario" Command="{Binding CmdAlta}"/>
   </StackLayout>
 </ContentPage>
