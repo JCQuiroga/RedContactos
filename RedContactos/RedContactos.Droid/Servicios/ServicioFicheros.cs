@@ -13,7 +13,14 @@ namespace RedContactos.Droid.Servicios
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var rutafinal = Path.Combine(path, fichero);
-            File.WriteAllText(rutafinal, texto);
+            try
+            {
+                File.WriteAllText(rutafinal, texto);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         public string RecuperarTexto(string fichero)
