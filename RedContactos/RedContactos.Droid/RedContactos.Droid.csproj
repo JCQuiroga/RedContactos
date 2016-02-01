@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\TextBoxDroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <BundleResource Include="Resources\drawable\imgex.png" />
+    <AndroidResource Include="Resources\drawable\images.jpg" />
+    <AndroidResource Include="Resources\drawable\imgex.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RedContactos\RedContactos.csproj">

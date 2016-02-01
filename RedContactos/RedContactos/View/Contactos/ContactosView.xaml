@@ -6,7 +6,7 @@
     <ListView ItemsSource="{Binding Amigos}" SelectedItem="{Binding ContactoSeleccionado,Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding nombreCompleto}"/>
+          <ImageCell ImageSource="imgex.png" Text="{Binding nombreCompleto}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

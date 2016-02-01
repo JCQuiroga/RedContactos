@@ -6,10 +6,10 @@
 
     <StackLayout Opacity="{Binding Opacity,Mode=TwoWay}"
                  IsEnabled="{Binding Enabled,Mode=TwoWay}"
-                
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.10}"
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
                  >
+      <!--RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.10}"
+      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"-->
+      <Image Source="imgex.jpg"></Image>
       <Label Text="Login"/>
       <Entry Text="{Binding Usuario.login}"/>
       <Label Text="Password"/>

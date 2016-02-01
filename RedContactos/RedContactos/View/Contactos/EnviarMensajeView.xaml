@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:RedContactos.CustomControls;assembly=RedContactos"
              x:Class="RedContactos.View.Contactos.EnviarMensajeView">
   <StackLayout>
     <Label Text="Asunto"/>
-    <Entry Text="{Binding Mensaje.asunto}"/>
+    <customControls:TextBox Text="{Binding Mensaje.asunto}"/>
     <Label Text="Mensaje"/>
     <Editor Text="{Binding Mensaje.contenido}"/>
     <Button Text="Enviar" Command="{Binding CmdEnviar}"/>
