@@ -5,6 +5,7 @@ using MvvmLibrary.Factorias;
 using RedContactos.Models;
 using RedContactos.Servicios;
 using RedContactos.Util;
+using RedContactos.View.Contactos;
 using Xamarin.Forms;
 
 namespace RedContactos.ViewModel.Contactos
@@ -42,10 +43,25 @@ namespace RedContactos.ViewModel.Contactos
         {
             CmdNuevo = new Command(RunNuevoContacto);
 
+            MessagingCenter.Subscribe<string>(this,"Hola", (sender) =>
+            {
+                var a = "";
+            });
+            MessagingCenter.Unsubscribe<string>(this,"Hola");
+
+            MessagingCenter.Subscribe<ContactoModel>(this,"AddContacto", (sender) =>
+            {
+                Amigos.Add(sender);
+
+            });
+
+
         }
 
         private async void RunNuevoContacto()
         {
+            MessagingCenter.Send("Hola don pepito","Hola");
+
             await _navigator.PushAsync<AddContactoViewModel>(viewModel =>
              {
                  viewModel.Amigos = Amigos;

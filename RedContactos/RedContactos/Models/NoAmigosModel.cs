@@ -8,7 +8,7 @@ namespace RedContactos.Models
 {
     public class NoAmigosModel
     {
-        public ICommand CmdAdd { get; set; } 
+        public ICommand CmdAdd { get; set; }
         public ContactoModel ContactoModel { get; set; }
         public IComponentContext ComponentContext { get; set; }
 
@@ -23,7 +23,8 @@ namespace RedContactos.Models
             var d = await vm._servicio.AddContacto(ContactoModel);
             if (d != null)
             {
-                vm.Amigos.Add(ContactoModel);
+                // vm.Amigos.Add(ContactoModel);
+                MessagingCenter.Send(ContactoModel, "AddContacto");
                 vm.NoAmigos.Remove(this);
                 await vm._page.MostrarAlerta("Éxito", "Contacto añadido", "Ok");
             }
